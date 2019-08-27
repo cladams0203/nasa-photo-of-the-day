@@ -1,7 +1,7 @@
 // import React from 'react';
 import axios from 'axios';
 
-export function Api(setData, setDescription, date) {
+export function Api(setData, setDescription, setTitle, date) {
     if(date === undefined) {
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
@@ -9,6 +9,7 @@ export function Api(setData, setDescription, date) {
           res => {
               setData(res.data.hdurl)
               setDescription(res.data.explanation)
+              setTitle(res.data.title)
           })
       .catch(err => console.log(err))
     
@@ -19,6 +20,7 @@ export function Api(setData, setDescription, date) {
         res => {
             setData(res.data.hdurl)
             setDescription(res.data.explanation)
+            setTitle(res.data.title)
         })
       .catch(err => console.log(err))
     }

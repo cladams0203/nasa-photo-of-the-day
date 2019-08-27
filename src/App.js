@@ -8,9 +8,10 @@ import "./App.css";
 function App() {
   const [data, setData] = useState([]);
   const [description, setDescription] = useState('')
-  console.log(data);
+  const [title, setTitle] = useState('')
+
   useEffect(() => {
-    Api(setData, setDescription);
+    Api(setData, setDescription, setTitle);
   }, []);
 
   return (
@@ -18,7 +19,7 @@ function App() {
     <h1>Nasa Photo of the Day</h1>
       <img src={data} alt={`nasa pic of the day`}></img>
       <Refresh setData={setData}/>
-      <Text description={description} />
+      <Text description={description} title={title} />
       <Date setData={setData} setDescription={setDescription} />
       
     </div>
