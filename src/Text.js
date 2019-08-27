@@ -1,14 +1,11 @@
 import React from 'react';
 
-export function Text() {
+export function Text(props) {
 
     return (
         <div>
             <h2>Nasa Daily Photo</h2>
-            <p>
-                This is the Nasa photo of the day.  You can also revert back to previous photos
-                by just selecting the date you wish to view.  Enjoy!
-            </p>
+            <p>{props.description}</p>
         </div>
     )
 }
