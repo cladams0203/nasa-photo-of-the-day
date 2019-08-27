@@ -2,14 +2,15 @@
 import axios from 'axios';
 
 export function Api(setData, date) {
-    if(date) {
+    if(date === undefined) {
     axios
-      .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+      .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
       .then(res => setData(res.data.hdurl))
       .catch(err => console.log(err))
-    }else{
+    
+    }else if (date){
         axios
-      .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+      .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
       .then(res => setData(res.data.hdurl))
       .catch(err => console.log(err))
     }

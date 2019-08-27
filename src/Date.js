@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Api } from './Api-call';
 
 export function Date(props) {
-
+    const [value, setValue] = useState('')
+    
     return (
         <div>
-            <form onSubmit={() => props.setData}>
-                <input type={`date`}></input>
+            <form onSubmit={Api(props.setData, value)} >
+                <input type={`date`} name={`date`} value={value} onChange={(e) => setValue(e.target.value)}></input>
             </form>
         </div>
     )
