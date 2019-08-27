@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { Api } from './Api-call';
+import { Refresh } from './Refresh';
+import { Date } from './Date';
 import "./App.css";
 
 function App() {
@@ -11,11 +13,11 @@ function App() {
 
   return (
     <div className="App">
+    <h1>Nasa Photo of the Day</h1>
       <img src={data} alt={`nasa pic of the day`}></img>
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <Refresh setData={setData}/>
+      <Date setData={setData} />
+      
     </div>
   );
 }
