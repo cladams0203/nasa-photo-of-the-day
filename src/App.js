@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Api } from './Api-call';
 import { Refresh } from './Refresh';
 import { Date } from './Date';
@@ -16,11 +16,11 @@ function App() {
 
   return (
     <div className="App">
-    <h1>Nasa Photo of the Day</h1>
+      <h1>Nasa Photo of the Day</h1>
       <img src={data} alt={`nasa pic of the day`}></img>
-      <Refresh setData={setData}/>
+      <Refresh setData={setData} setDescription={setDescription} setTitle={setTitle} />
       <Text description={description} title={title} />
-      <Date setData={setData} setDescription={setDescription} />
+      <Date setData={setData} setDescription={setDescription} setTitle={setTitle} />
       
     </div>
   );

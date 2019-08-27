@@ -7,7 +7,7 @@ export function Date(props) {
     return (
         <div>
             <h3>Select A Previous Date</h3>
-            <form onSubmit={Api(props.setData, props.setDescription, value)} >
+            <form onSubmit={Api(props.setData, props.setDescription,props.setTitle, value)} >
                 <input type={`date`} name={`date`} value={value} onChange={(e) => setValue(e.target.value)}></input>
             </form>
         </div>

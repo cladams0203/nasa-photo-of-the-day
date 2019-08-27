@@ -5,7 +5,7 @@ export function Refresh(props) {
 
     return (
         <div>
-            <button onClick={()=> Api(props.setData)} >Refresh Photo</button>
+            <button onClick={()=> Api(props.setData, props.setDescription, props.setTitle)} >Refresh Photo</button>
         </div>
     )
 }
